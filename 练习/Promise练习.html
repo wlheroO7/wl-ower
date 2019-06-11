@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise练习</title>
+    <script>
+        var fn = function(num){
+            return new Promise(function(resolve,reject){
+                if(typeof num === 'number'){
+                    resolve(num)
+                }else{
+                    reject('TypeError')
+                }
+            })
+        }
+        fn(2).then(function(res){
+            console.log("First：" + res);
+            return res + 1;
+        },function(res){
+         console.log(res)
+        }).then(function(res){
+            console.log("Second: "+ res);
+            return res + 1;
+        },function(res){
+            console.log(res)
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

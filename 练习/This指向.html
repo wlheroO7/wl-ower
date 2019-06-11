@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This指向</title>
+    <script>
+        /*var a = 10;
+        var obj = {
+            a:20
+        }
+        function fn(){
+            console.log(this.a)
+        }
+        fn();//10
+        fn.call(obj);//20*/
+        //=====================================================
+       /* var a = 20;
+        function fn(){
+            console.log(this.a)
+        }
+        fn();//20*/
+        //=====================================================
+       /* var a = 66;
+        function fn(){
+            function foo(){
+                console.log(this.a)
+            }
+            foo();
+        }
+        fn();//66*/
+        //=====================================================
+        /*var a = 88;
+        var obj = {
+            a: 10,
+            c: this.a +12,
+            fn: function (){
+                return this.a
+            }
+        }
+        console.log(obj.c);//100
+        console.log(obj.fn());//22*/
+        //=====================================================
+        /*'use strict'*/
+        var a = 20;
+        function foo(){
+            var a = 1;
+            var obj = {
+                a: 10,
+                c: this.a +10,
+                fn: function(){
+                    console.log(this.a);
+                }
+            }
+            return obj.fn()
+        }
+        console.log(foo());//
+        //console.log(window.foo());//
+        //=====================================================
+        //=====================================================
+        //=====================================================
+    </script>
+</head>
+<body>
+
+</body>
+</html>

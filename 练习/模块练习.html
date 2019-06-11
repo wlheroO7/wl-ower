@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块练习</title>
+    <script>
+        function CoolModule(){
+            var something = 'cool';
+            var another = [1,2,3];
+            function doAnother(){
+                console.log(another.join('!'))
+            }
+            function doSomething(){
+                console.log(something)
+            }
+            return{
+                doSomething: doSomething,
+                doAnother: doAnother
+            }
+        }
+        var foo = CoolModule();
+        foo.doAnother();
+        foo.doSomething();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

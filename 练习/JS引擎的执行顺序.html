@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS引擎的执行顺序</title>
+    <script>
+         /*console.log('1')
+        setTimeout(function(){
+            console.log('2')
+        },0)
+         setTimeout(function(){
+             console.log('3');
+         },0)
+        console.log('4')*/
+         setTimeout(function(){
+             console.log('定时器开始啦')//4
+         });
+
+         new Promise(function(resolve){
+             console.log('马上执行for循环啦');//1
+             for(var i = 0; i < 10000; i++){
+                 i == 99 && resolve();
+             }
+         }).then(function(){
+             console.log('执行then函数啦')//3
+         });
+
+         console.log('代码执行结束');//2
+    </script>
+</head>
+<body>
+
+</body>
+</html>

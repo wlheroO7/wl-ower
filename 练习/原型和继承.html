@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型和继承</title>
+    <script>
+       /* function A(x){
+            this.x = x
+        }
+        var obj = new A(1);
+        console.log(obj.constructor === A.prototype.constructor)*/
+        function father(age){
+            this.age = age;
+        }
+        father.prototype.getAge = function(){
+            console.log(this.age);
+        }
+        function children(name, age){
+            this.name = name;
+            father.call(this,age);
+        }
+       /* children.prototype = new father();
+       children.prototype.getName = function(){
+           console.log(this.name);
+       }
+        var tFather = new father(15);
+        tFather.getAge();
+        var tChildren = new children('Jack',24);
+        tChildren.getName();
+        tChildren.getAge();*/
+
+       function dealPrototype(father, children){
+           var pro = Object(father.prototype);
+           pro.constructor = children;
+           children.prototype = pro;
+       }
+
+       dealPrototype(father,children);
+       children.prototype.getName = function(){
+           console.log(this.name);
+       }
+       var tChildren = new children('Make', 25);
+       tChildren.getName();
+       tChildren.getAge();
+       var tFather = new father(45);
+       tFather.getAge();
+       console.log(children.prototype);
+       console.log(father.prototype);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
