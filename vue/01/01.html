@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01</title>
+    <script src="../lib/vue.min.js"></script>
+    <script src="../lib/vue-router.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" style="margin-left: 50px">
+        <p v-cloak>{{ msg }}</p>
+        <h4 v-text = 'msg'></h4>
+        <div v-html="msg2"></div>
+        <!--<input type="button" value="按钮" v-bind:title="myTitle + '123'">-->
+        <!--<input type="button" value="按钮" :title="myTitle + '456'" @click="show"></br>-->
+
+        <input type="button" value="浪起来" @click = 'langqilai'>
+        <input type="button" value="低调" @click = 'didiao'>
+        <h4>{{ msg3 }}</h4>
+
+        <div @click="divHandler">
+            <input type="button" value="点击" @click.stop="btnHandler">
+        </div>
+
+        <a href="http://www.baidu.com" @click.prevent = "lineClick">去百度</a>
+
+        <div @click.capture="divHandler1">
+            <input type="button" value="点击1" @click="btnHandler1">
+        </div>
+
+        <div @click.self="divHandler2">
+            <input type="button" value="点击2" @click="btnHandler2">
+        </div>
+
+        <a href="http://www.baidu.com" @click.prevent.once = "lineClick1">去百度</a>
+
+
+        <div>
+            <h4>{{ msg4 }}</h4>
+
+            <input type="text" v-model="msg4" style="width: 100%">
+        </div>
+
+
+        <div v-for = "(item, i) in list">值为：{{item}}  ----- 索引为：{{i}}</div>
+        <div v-for = "(item, i) in list1">id为：{{item.id}}---- name为：{{item.name}}  ----- 索引为：{{i}}</div>
+        <div v-for = "num in 10">这是第{{num}}个DIV</div>
+        <div v-for = "(val, key, i) in list3">值为：{{val}}---- 键为：{{key}}  ----- 索引为：{{i}}</div>
+        <div>
+            <div>
+                <label>Id:
+                    <input type="text" v-model="id">
+                </label>
+                <label>Name:
+                    <input type="text" v-model="name" @keyup.F2="addContent" v-color="'red'" v-focus>
+                </label>
+                <label>
+                    <input type="button" value="add" @click = "addContent">
+                </label>
+            </div>
+            <div v-for = "item in list4" :key = "item.id">
+                <input type="checkbox">{{item.id}}---- {{item.name}}
+            </div>
+        </div>
+        <div>
+            <my-com1></my-com1>
+            <mycom2></mycom2>
+            <mycom3></mycom3>
+            <mycom4 v-bind:parentMsg ='msg5' @func="parentShow"></mycom4>
+            <my-count></my-count>
+            <hr>
+            <my-count></my-count>
+        </div>
+        <div>
+            <a href="" @click.prevent = "conName = 'login'">登录</a>
+            <a href="" @click.prevent = "conName = 'register'">注册</a>
+            <component :is="conName"></component>
+        </div>
+
+        <div>
+            <input type="button" value="获取标签内容" @click="getHtmlText">
+            <h3 ref="myText">哈哈哈，今天天气不错！！！！</h3>
+        </div>
+    </div>
+    <template id = "mycom3Test">
+        <div>
+            <h1>创建组件测试3</h1>
+            <div>啦啦啦啦啦</div>
+        </div>
+    </template>
+
+    <template id = "conutTest">
+        <div>
+            <input type="button" value="+1" @click = 'addCount'>
+            <p>{{count}}</p>
+        </div>
+    </template>
+
+    <template id="loginTem">
+        <div>
+            <label>Login:</label>
+            <div>name:
+                <input type="text" v-model="name">
+            </div>
+            <div>pwd:
+                <input type="text" v-model="pwd">
+            </div>
+        </div>
+    </template>
+
+    <template id="registerTem">
+        <div>
+            <label>Register:</label>
+            <div>name:
+                <input type="text" v-model="name">
+            </div>
+            <div>pwd:
+                <input type="text" v-model="pwd">
+            </div>
+        </div>
+    </template>
+    <script>
+        Vue.config.keyCodes.F2 = 113;
+        Vue.component("myCom1",Vue.extend({
+            template:"<h1>创建组件测试1</h1>"
+        }))
+        Vue.component("mycom2",{
+            template: "<h1>创建组件测试2---这是组件中的数据{{ msg }}</h1>",
+            data: () =>{
+                return {
+                    msg: "我是组件中的数据"
+                }
+            }
+        })
+        Vue.component("mycom3",{
+            template: '#mycom3Test'
+        })
+        Vue.component("myCount",{
+            template: '#conutTest',
+            data: ()=>{
+                return {count:0}
+            },
+            methods: {
+                addCount (){
+                    this.count ++;
+                }
+            }
+        })
+        Vue.component("login",{
+            template: "#loginTem",
+            data: ()=>{
+                return{
+                    name:"",
+                    pwd:""
+                }
+            }
+        })
+        Vue.component("register",{
+            template: "#registerTem",
+            data: ()=>{
+                return{
+                    name:"",
+                    pwd:""
+                }
+            }
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: "123",
+                msg2:"<h1>哈哈哈</h1>",
+                myTitle: '自己定义的Tile',
+                msg3: "猥琐发育，别浪！！！",
+                intervalId: null,
+                msg4: "测试双向数据绑定。",
+                msg5: '我是父组件数据',
+                list: [1,2,3,4,5,6],
+                list1: [
+                    {id: 1,name: 'zs'},
+                    {id: 2,name: 'zs2'},
+                    {id: 3,name: 'zs3'},
+                    {id: 4,name: 'zs4'},
+                    {id: 5,name: 'zs5'},
+                    {id: 6,name: 'zs6'},
+                ],
+                list3: {
+                    id: 123,
+                    name: 'zs',
+                    age: 65
+                },
+                list4: [
+                    {id: 1, name: "曹操"},
+                    {id: 2, name: "刘备"},
+                    {id: 3, name: "孙权"},
+                    {id: 4, name: "周瑜"},
+                    {id: 5, name: "诸葛亮"}
+                ],
+                id: "",
+                name: "",
+                conName: "login"
+            },
+            methods: {
+                show: function(){
+                    alert('Hello');
+                },
+                langqilai(){
+                    var _this = this;
+                    if(_this.intervalId !== null) return;
+                    _this.intervalId = setInterval(() =>{
+                        var start = _this.msg3.substring(0, 1);
+                        var end = _this.msg3.substring(1);
+                        _this.msg3 = end + start;
+                    },100)
+                },
+                didiao(){
+                    clearInterval(this.intervalId);
+                    this.intervalId = null;
+                    this.msg3 = "猥琐发育，别浪！！！";
+                },
+                divHandler(){
+                    console.log("这是触发了div的点击");
+                },
+                btnHandler(){
+                    console.log("这是触发了btn的点击");
+                },
+                lineClick(){
+                    console.log("触发的链接点击事件")
+                },
+                divHandler1(){
+                    console.log("这是触发了div1的点击");
+                },
+                btnHandler1(){
+                    console.log("这是触发了btn1的点击");
+                },
+                divHandler2(){
+                    console.log("这是触发了div2的点击");
+                },
+                btnHandler2(){
+                    console.log("这是触发了btn2的点击");
+                },
+                lineClick1(){
+                    console.log("触发的链接点击事件1")
+                },
+                addContent(){
+                    this.list4.unshift({id: this.id,name: this.name})
+                },
+                parentShow(data){
+                    console.log("调用父组件的方法: --- " + data)
+                },
+                getHtmlText(){
+                    console.log(this.$refs.myText.innerHTML)
+                }
+            },
+            directives: {
+                'color': {
+                    bind: function(el, binging){
+                        el.style.color = binging.value;
+                    }
+                },
+                'focus': {
+                    inserted: function(el){
+                        el.focus();
+                    }
+                }
+            },
+            components:{
+                mycom4: {
+                    template: '<h1>创建私有组件测试4----- {{ parentMsg }}<input type="button" value="子组件的点击按钮" @click="mycomClick"></h1>',
+                    props: ['parentMsg'],
+                    methods: {
+                        mycomClick(){
+                            console.log("我是子组件的点击按钮");
+                            this.$emit('func',"test")
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
