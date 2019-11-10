@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4558d46c-1142-4b3a-b7ba-1b4b9c8a2314" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/grag/grag.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grag/grag1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dragula/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dragula/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/01/01.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue/01/01.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dragula" beforeDir="false" afterPath="$PROJECT_DIR$/dragula" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,8 +38,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dragula/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="206" selection-start-line="206" selection-end-line="206" selection-end-column="46" />
+            <state relative-caret-position="233">
+              <caret line="189" column="21" selection-start-line="189" selection-start-column="21" selection-end-line="189" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -101,7 +98,7 @@
       <path value="$PROJECT_DIR$/node_modules/vuex/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="154" />
     <option name="y" value="27" />
     <option name="width" value="1400" />
@@ -119,42 +116,6 @@
             <path>
               <item name="wl-ower" type="b2602c69:ProjectViewProjectNode" />
               <item name="wl-ower" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wl-ower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wl-ower" type="462c0819:PsiDirectoryNode" />
-              <item name="dragula" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wl-ower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wl-ower" type="462c0819:PsiDirectoryNode" />
-              <item name="dragula" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wl-ower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wl-ower" type="462c0819:PsiDirectoryNode" />
-              <item name="dragula" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wl-ower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wl-ower" type="462c0819:PsiDirectoryNode" />
-              <item name="dragula" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wl-ower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wl-ower" type="462c0819:PsiDirectoryNode" />
-              <item name="dragula" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wl-ower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wl-ower" type="462c0819:PsiDirectoryNode" />
-              <item name="dragula" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,7 +170,7 @@
       <workItem from="1562391971019" duration="15328000" />
       <workItem from="1562481511172" duration="6555000" />
       <workItem from="1564159003502" duration="2271000" />
-      <workItem from="1564668099882" duration="1545000" />
+      <workItem from="1564668099882" duration="2660000" />
     </task>
     <task id="LOCAL-00001" summary="Vue学习代码">
       <created>1562485705604</created>
@@ -236,7 +197,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52327000" />
+    <option name="totallyTimeSpent" value="53442000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -249,9 +210,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2528978" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2528978" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -259,7 +219,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.52671754" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.13195202" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.20392585" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -472,8 +432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dragula/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="206" selection-start-line="206" selection-end-line="206" selection-end-column="46" />
+        <state relative-caret-position="233">
+          <caret line="189" column="21" selection-start-line="189" selection-start-column="21" selection-end-line="189" selection-end-column="21" />
         </state>
       </provider>
     </entry>
