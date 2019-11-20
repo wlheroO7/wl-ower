@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A</title>
+    <script>
+        function onload(){
+            var iFrame = documnet.getElementById("iframe");
+            var win  = iFrame.currentWindow;
+            win.postMessage("i am A page!!")
+        }
+        /* window.name="i am A Page!!";
+        setTimeout(function(){
+            window.location = "http://localhost:63342/wl-ower/%E8%B7%A8%E5%9F%9F/b.html?_ijt=u66ij9corkelbpait39j5ho5ls";
+        },3000) */
+    </script>
+    <iframe id="iframe" src="http://localhost:63342/wl-ower/%E8%B7%A8%E5%9F%9F/b.html?_ijt=u66ij9corkelbpait39j5ho5ls" onload="onload()"></iframe>
+</head>
+<body>
+    
+</body>
+</html>
