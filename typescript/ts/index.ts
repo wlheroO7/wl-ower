@@ -447,7 +447,7 @@ class HttpClient{
 }
 var http=new HttpClient(); */
  ////////////////////////方法参数装饰器//////////////////////////
-function logParams(params:any){
+/* function logParams(params:any){
 
     return function(target:any,methodName:any,paramsIndex:any){
 
@@ -471,4 +471,11 @@ class HttpClient{
         getData(@logParams('xxxxx') uuid:any){               
         console.log(uuid);
         }
-}
+} */
+ ////////////////////////es6练习//////////////////////////
+ let [a,b,c] = [1,2,3];
+ console.log(a+b+c)
+ let [,,lll] = ["1","2","3"]
+ console.log(lll); 
+ let [x,y,...z] =["x"]
+ console.log(x +"--"+y+"--"+z) 

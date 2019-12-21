@@ -1,13 +1,4 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 /* var flag:boolean = true;
 console.log(flag)
 var num:number = 12345;
@@ -457,23 +448,35 @@ class HttpClient{
 }
 var http=new HttpClient(); */
 ////////////////////////方法参数装饰器//////////////////////////
-function logParams(params) {
-    return function (target, methodName, paramsIndex) {
+/* function logParams(params:any){
+
+    return function(target:any,methodName:any,paramsIndex:any){
+
         console.log(params);
+
         console.log(target);
+
         console.log(methodName);
+
         console.log(paramsIndex);
-        target.apiUrl = params;
-    };
-}
-var HttpClient = /** @class */ (function () {
-    function HttpClient() {
+
+
+        target.apiUrl=params;
+
     }
-    HttpClient.prototype.getData = function (uuid) {
+}
+class HttpClient{
+        public url:any |undefined;
+        constructor(){
+        }
+        getData(@logParams('xxxxx') uuid:any){
         console.log(uuid);
-    };
-    __decorate([
-        __param(0, logParams('xxxxx'))
-    ], HttpClient.prototype, "getData", null);
-    return HttpClient;
-}());
+        }
+} */
+////////////////////////es6练习//////////////////////////
+var _a = [1, 2, 3], a = _a[0], b = _a[1], c = _a[2];
+console.log(a + b + c);
+var _b = ["1", "2", "3"], lll = _b[2];
+console.log(lll);
+var _c = ["x"], x = _c[0], y = _c[1], z = _c.slice(2);
+console.log(x + "--" + y + "--" + z);
