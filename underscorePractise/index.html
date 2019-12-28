@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>underscorePractise基础练习</title>
+    <!-- <script type="text/javascript" src="./javascript/setTimeOut,js"></script> -->
+    <script src="../node_modules//underscore/underscore.js"></script>
+    <script>
+        /////////////////////pluck使用//////////////////////////////////
+        var test = [{name:"1",age:1},{name:"2",age:2},{name:"3",age:3},{name:"4",age:4}]
+        var b =_.pluck(test,"name")
+        console.log(b);
+
+        var list = [{name:1, age:2, record:{math:2, english:3}}, {name:2, age:3, record:{math:3, english:4}}, {name:3, age:4, record:{math:4, english:5}}];
+        console.log(_.pluck(list, ["record","math"]));
+        /////////////////////extend使用//////////////////////////////////
+        var a = {name:"张三"};
+        var b = {age:6};
+        console.log(_.extend(a,{c:"lllllll"}))
+
+        
+
+    </script>
+</head>
+<body>
+</body>
+</html>

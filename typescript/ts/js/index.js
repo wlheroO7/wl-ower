@@ -1,4 +1,17 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /* var flag:boolean = true;
 console.log(flag)
 var num:number = 12345;
@@ -89,46 +102,52 @@ class web extends Person{
     }
 }
 var w = new web("王五");
-console.log(w.run());
+console.log(w.run());*/
 /////////////////////////////////////////////////////////////
-class Animal{
-    protected name:string;
-    constructor(name:string){
+var Animal = /** @class */ (function () {
+    function Animal(name) {
         this.name = name;
     }
-    eat(){
-        console.log("我是父类")
+    Animal.prototype.eat = function () {
+        console.log("我是父类");
+    };
+    return Animal;
+}());
+var Dog = /** @class */ (function (_super) {
+    __extends(Dog, _super);
+    function Dog(name) {
+        return _super.call(this, name) || this;
     }
-}
-class Dog extends Animal{
-    constructor(name:string){
-        super(name)
-    }
-    eat(){
+    Dog.prototype.eat = function () {
         return this.name + "吃屎";
+    };
+    return Dog;
+}(Animal));
+var Cat = /** @class */ (function (_super) {
+    __extends(Cat, _super);
+    function Cat(name) {
+        return _super.call(this, name) || this;
     }
-}
-class Cat extends Animal{
-    constructor(name:string){
-        super(name)
-    }
-    eat(){
+    Cat.prototype.eat = function () {
         return this.name + "吃老鼠";
+    };
+    return Cat;
+}(Animal));
+var Mouse = /** @class */ (function (_super) {
+    __extends(Mouse, _super);
+    function Mouse(name) {
+        return _super.call(this, name) || this;
     }
-}
-class Mouse extends Animal{
-    constructor(name:string){
-        super(name)
-    }
-}
-let dog = new Dog("大黄");
+    return Mouse;
+}(Animal));
+var dog = new Dog("大黄");
 console.log(dog.eat());
-let cat = new Cat("小猫");
+var cat = new Cat("小猫");
 console.log(cat.eat());
-let mouse = new Mouse("老鼠");
-console.log(mouse.eat())
+var mouse = new Mouse("老鼠");
+console.log(mouse.eat());
 /////////////////////////////////////////////////////////////
-abstract class Animal1{
+/*abstract class Animal1{
     public name:string;
     constructor(name:string){
         this.name = name;
@@ -162,9 +181,9 @@ console.log(dog1.eat());
 console.log(dog1.run());
 let cat1 = new Cat1("Jerry");
 console.log(cat1.eat());
-console.log(cat1.run());
+console.log(cat1.run()); */
 /////////////////////////////////////////////////////////////
-interface fullName{
+/* interface fullName{
     firstName:string;
     secondName?:string;
 }
@@ -204,9 +223,8 @@ let cat2 = new Cat2("小花");
 cat2.eat("老鼠");
 let a = "12346";
 let b = "lallalal";
-console.log(`${a}+"--"${b}`)
+console.log(`${a}+"--"${b}`) */
 /////////////////////////////////////////////////////////////
- */
 /* interface Animal{
     eat():void;
 }
@@ -336,7 +354,8 @@ class HttpClient{
     }
 }
 var aa:any = new HttpClient();
-console.log(aa.url); */
+console.log(aa.url);
+console.log(aa.run()); */
 ////////////////////////修饰器可传参/////////////////////////////////////
 /* function logclass(params:any){
     return function(target:any){
@@ -379,8 +398,8 @@ class HttpClient{
 }
 var aa:any = new HttpClient();
 aa.getData(); */
-/* ////////////////////////属性装饰器//////////////////////////
-function logclass(params:any){
+////////////////////////属性装饰器//////////////////////////
+/* function logclass(params:any){
     return function(target:any){
         console.log(params);
         console.log(target);
@@ -408,8 +427,8 @@ class HttpClient{
 var http=new HttpClient();
 http.getData();
 console.log(http.apiUrl+"--------------") */
-/* ////////////////////////方法装饰器//////////////////////////
-function logclass(params:any){
+////////////////////////方法装饰器//////////////////////////
+/* function logclass(params:any){
     return function(target:any){
         console.log(params);
         console.log(target);
@@ -474,9 +493,9 @@ class HttpClient{
         }
 } */
 ////////////////////////es6练习//////////////////////////
-var _a = [1, 2, 3], a = _a[0], b = _a[1], c = _a[2];
-console.log(a + b + c);
-var _b = ["1", "2", "3"], lll = _b[2];
-console.log(lll);
-var _c = ["x"], x = _c[0], y = _c[1], z = _c.slice(2);
-console.log(x + "--" + y + "--" + z);
+/*  let [a,b,c] = [1,2,3];
+ console.log(a+b+c)
+ let [,,lll] = ["1","2","3"]
+ console.log(lll);
+ let [x,y,...z] =["x"]
+ console.log(x +"--"+y+"--"+z)  */

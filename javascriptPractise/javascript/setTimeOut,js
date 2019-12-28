@@ -1,0 +1,14 @@
+setTimeout(function(){
+    console.log("测试定时器5秒")
+},5000)
+setTimeout(function(){
+    console.log("测试定时器2秒")
+},2000)
+setTimeout(function(){
+    console.log("测试定时器0秒")
+},0)
+setTimeout(function(){
+    console.log("测试定时器没有默认时间")
+})
+let a = [1,2,3,3,1,4,5,6,8,5,2];
+let b = [...new Set(a)];

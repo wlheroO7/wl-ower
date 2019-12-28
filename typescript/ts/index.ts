@@ -88,7 +88,7 @@ class web extends Person{
     }
 }
 var w = new web("王五");
-console.log(w.run());
+console.log(w.run());*/
 /////////////////////////////////////////////////////////////
 class Animal{
     protected name:string;
@@ -127,7 +127,7 @@ console.log(cat.eat());
 let mouse = new Mouse("老鼠");
 console.log(mouse.eat())
 /////////////////////////////////////////////////////////////
-abstract class Animal1{
+/*abstract class Animal1{
     public name:string;
     constructor(name:string){
         this.name = name;
@@ -161,9 +161,9 @@ console.log(dog1.eat());
 console.log(dog1.run());
 let cat1 = new Cat1("Jerry");
 console.log(cat1.eat());
-console.log(cat1.run());
+console.log(cat1.run()); */
 /////////////////////////////////////////////////////////////
-interface fullName{
+/* interface fullName{
     firstName:string;
     secondName?:string;
 }
@@ -203,9 +203,9 @@ let cat2 = new Cat2("小花");
 cat2.eat("老鼠");
 let a = "12346";
 let b = "lallalal";
-console.log(`${a}+"--"${b}`)
+console.log(`${a}+"--"${b}`) */
 /////////////////////////////////////////////////////////////
- */
+
 /* interface Animal{
     eat():void;
 }
@@ -335,7 +335,8 @@ class HttpClient{
     }
 }
 var aa:any = new HttpClient();
-console.log(aa.url); */
+console.log(aa.url);
+console.log(aa.run()); */
 ////////////////////////修饰器可传参/////////////////////////////////////
 /* function logclass(params:any){
     return function(target:any){
@@ -378,8 +379,8 @@ class HttpClient{
 }
 var aa:any = new HttpClient();
 aa.getData(); */
-/* ////////////////////////属性装饰器//////////////////////////
-function logclass(params:any){
+////////////////////////属性装饰器//////////////////////////
+/* function logclass(params:any){
     return function(target:any){
         console.log(params);
         console.log(target);
@@ -407,8 +408,8 @@ class HttpClient{
 var http=new HttpClient();
 http.getData();
 console.log(http.apiUrl+"--------------") */
-/* ////////////////////////方法装饰器//////////////////////////
-function logclass(params:any){
+////////////////////////方法装饰器//////////////////////////
+/* function logclass(params:any){
     return function(target:any){
         console.log(params);
         console.log(target);
@@ -473,9 +474,9 @@ class HttpClient{
         }
 } */
  ////////////////////////es6练习//////////////////////////
- let [a,b,c] = [1,2,3];
+/*  let [a,b,c] = [1,2,3];
  console.log(a+b+c)
  let [,,lll] = ["1","2","3"]
  console.log(lll); 
  let [x,y,...z] =["x"]
- console.log(x +"--"+y+"--"+z) 
+ console.log(x +"--"+y+"--"+z)  */
