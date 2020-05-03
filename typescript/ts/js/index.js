@@ -1,17 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 /* var flag:boolean = true;
 console.log(flag)
 var num:number = 12345;
@@ -102,52 +89,46 @@ class web extends Person{
     }
 }
 var w = new web("王五");
-console.log(w.run());*/
+console.log(w.run()); */
 /////////////////////////////////////////////////////////////
-var Animal = /** @class */ (function () {
-    function Animal(name) {
+/* class Animal{
+    protected name:string;
+    constructor(name:string){
         this.name = name;
     }
-    Animal.prototype.eat = function () {
-        console.log("我是父类");
-    };
-    return Animal;
-}());
-var Dog = /** @class */ (function (_super) {
-    __extends(Dog, _super);
-    function Dog(name) {
-        return _super.call(this, name) || this;
+    eat(){
+        console.log("我是父类")
     }
-    Dog.prototype.eat = function () {
+}
+class Dog extends Animal{
+    constructor(name:string){
+        super(name)
+    }
+    eat(){
         return this.name + "吃屎";
-    };
-    return Dog;
-}(Animal));
-var Cat = /** @class */ (function (_super) {
-    __extends(Cat, _super);
-    function Cat(name) {
-        return _super.call(this, name) || this;
     }
-    Cat.prototype.eat = function () {
+}
+class Cat extends Animal{
+    constructor(name:string){
+        super(name)
+    }
+    eat(){
         return this.name + "吃老鼠";
-    };
-    return Cat;
-}(Animal));
-var Mouse = /** @class */ (function (_super) {
-    __extends(Mouse, _super);
-    function Mouse(name) {
-        return _super.call(this, name) || this;
     }
-    return Mouse;
-}(Animal));
-var dog = new Dog("大黄");
+}
+class Mouse extends Animal{
+    constructor(name:string){
+        super(name)
+    }
+}
+let dog = new Dog("大黄");
 console.log(dog.eat());
-var cat = new Cat("小猫");
+let cat = new Cat("小猫");
 console.log(cat.eat());
-var mouse = new Mouse("老鼠");
-console.log(mouse.eat());
+let mouse = new Mouse("老鼠");
+console.log(mouse.eat()) */
 /////////////////////////////////////////////////////////////
-/*abstract class Animal1{
+/* abstract class Animal1{
     public name:string;
     constructor(name:string){
         this.name = name;
@@ -163,6 +144,7 @@ class Dog1 extends Animal1{
     }
     eat():any{
         return this.name + "吃狗粮"
+
     }
 }
 class Cat1 extends Animal1{
@@ -225,6 +207,23 @@ let a = "12346";
 let b = "lallalal";
 console.log(`${a}+"--"${b}`) */
 /////////////////////////////////////////////////////////////
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 /* interface Animal{
     eat():void;
 }
@@ -287,8 +286,8 @@ class OperateDb<E>{
     updata(info:E,id:number){
         console.log(info+"---"+id)
     }
-
 }
+
 var a = new ArtiaclObj({name:"张三",
 age: 12,
 status:"已婚"})
@@ -443,6 +442,7 @@ function logProperty(params:any){
 }
 function logMethod(params:any){
     return function(target:any,methodName:any,desc:any){
+        console.log(params);
         console.log(target);
         console.log(methodName);
         console.log(desc);
@@ -499,3 +499,13 @@ class HttpClient{
  console.log(lll);
  let [x,y,...z] =["x"]
  console.log(x +"--"+y+"--"+z)  */
+var test_js_1 = __importDefault(require("../modal/test.js"));
+var test1 = /** @class */ (function (_super) {
+    __extends(test1, _super);
+    function test1() {
+        return _super.call(this) || this;
+    }
+    return test1;
+}(test_js_1.default));
+var a = new test_js_1.default();
+a.test();

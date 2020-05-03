@@ -111,9 +111,71 @@
         }
         window.addEventListener("scroll",debounce(handle,2000)) */
         /////////////////////pluck使用//////////////////////////////////
-        var test = [{name:"1",age:1},{name:"2",age:2},{name:"3",age:3},{name:"4",age:4}]
+       /*  var test = [{name:"1",age:1},{name:"2",age:2},{name:"3",age:3},{name:"4",age:4}]
         var b =_.pluck(test,"name")
-        console.log(b);
+        console.log(b); */
+        /////////////////////localStorage//////////////////////////////////
+        /* var test = "data:{name:'张三',age:66}";
+        var test2 = "data:{name:'李四',age:88}";
+        var test3 = "data:{name:'王五',age:99}";
+        var storage = window.localStorage;
+        storage.setItem("test",test);
+        storage.setItem("test2",test2)
+        storage.setItem("test3",test3)
+        console.log(storage);
+        console.log(storage.getItem("test"))
+        console.log(storage.getItem("test2"))
+        console.log(storage.key(0)) */
+        //////////////////////////////////////////////////////////////////
+/*         var f = false; 
+if (f === true) { 
+  var a = 10; 
+} 
+ 
+function fn() { 
+  var b = 20; 
+  c = 30; 
+} 
+ 
+fn(); 
+console.log(a);  */
+/* console.log(b);  */
+/* console.log(c);
+
+function fun1 () {
+		 console.log('fun1');
+		}
+		fun1();
+		function fun1 () {
+			console.log('fun1fun1');
+		}
+		fun1();
+	
+		var fun2 = function () {
+			console.log('fun2');
+		}
+		fun2();
+		var fun2 = function () {
+			console.log('fun2fun2');
+		}
+		fun2(); */
+        /* let test = /^(?!0+(?:\.0+)?$)(?:[1-9]\d*|0)(?:\.\d{1,2})?$/
+        let test2 = 0.365;
+        console.log(test.test(test2)); */
+function sum(arr) {
+    var total = 0;
+    for(var i = 0;i<arr.length;i++){
+         total += arr[i]
+    }
+    return total;
+}
+console.log(sum([1,2,3,4]));
+
+
+
+
+
+
     </script>
 </head>
 <body>

@@ -88,9 +88,9 @@ class web extends Person{
     }
 }
 var w = new web("王五");
-console.log(w.run());*/
+console.log(w.run()); */
 /////////////////////////////////////////////////////////////
-class Animal{
+/* class Animal{
     protected name:string;
     constructor(name:string){
         this.name = name;
@@ -125,9 +125,9 @@ console.log(dog.eat());
 let cat = new Cat("小猫");
 console.log(cat.eat());
 let mouse = new Mouse("老鼠");
-console.log(mouse.eat())
+console.log(mouse.eat()) */
 /////////////////////////////////////////////////////////////
-/*abstract class Animal1{
+/* abstract class Animal1{
     public name:string;
     constructor(name:string){
         this.name = name;
@@ -143,6 +143,7 @@ class Dog1 extends Animal1{
     }
     eat():any{
         return this.name + "吃狗粮"
+
     }
 }  
 class Cat1 extends Animal1{
@@ -268,8 +269,8 @@ class OperateDb<E>{
     updata(info:E,id:number){
         console.log(info+"---"+id)
     }
-
 }
+
 var a = new ArtiaclObj({name:"张三",
 age: 12,
 status:"已婚"})
@@ -424,6 +425,7 @@ function logProperty(params:any){
 }
 function logMethod(params:any){
     return function(target:any,methodName:any,desc:any){
+        console.log(params);
         console.log(target);
         console.log(methodName);
         console.log(desc);
@@ -480,3 +482,11 @@ class HttpClient{
  console.log(lll); 
  let [x,y,...z] =["x"]
  console.log(x +"--"+y+"--"+z)  */
+ import test from '../modal/test.js';
+ class test1 extends test{
+     constructor(){
+         super();
+     }
+ }
+var a = new test();
+a.test();
